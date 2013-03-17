@@ -6,7 +6,7 @@ def assert_grid(init_grid, expected_grid)
 end
 
 describe Game do
-  context  'y demension' do
+  context  'y dimension' do
     it '1 cell' do
       assert_grid [[1]], [[0]]
     end
@@ -32,7 +32,7 @@ describe Game do
     end
   end
 
-  context 'x demension' do
+  context 'x dimension' do
     it '1 cell' do
       assert_grid [[0]], [[0]]
     end
@@ -45,21 +45,34 @@ describe Game do
       assert_grid [[1,1,1]], [[0,1,0]]
     end
 
-    it '4 cells' do
+    it '> 4 cells' do
       assert_grid [[1,1,1,1]], [[0,1,1,0]]
       assert_grid [[1,1,1,1,0,1,0,1,1,1]],
                   [[0,1,1,0,0,0,0,0,1,0]]
     end
   end
 
-  context 'x, y demension' do
+  context 'xy dimension' do
     it '2x2 cells' do
-      assert_grid [[0,0], [0,0]], [[0,0], [0,0]]
+      assert_grid [[0,0],
+                   [0,0]],
+                  [[0,0], 
+                   [0,0]]
+
+      assert_grid [[1,1], 
+                   [1,0]],
+                  [[1,1],
+                   [1,1]]
     end
 
     it '3x3 cells' do
-      assert_grid [[1,1,1], [0,0,0],[1,1,1]],
-                  [[0,1,0], [0,0,0],[0,1,0]]
+      assert_grid [[1,1,1],
+                   [0,0,0],
+                   [1,1,1]],
+                  [[0,1,0],
+                   [0,0,0],
+                   [0,1,0]]
+
       assert_grid [[1,1,1],
                    [1,1,1],
                    [1,1,1]],
