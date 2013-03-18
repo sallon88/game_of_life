@@ -28,7 +28,6 @@ init_grid = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 
 game = Game.new init_grid
 
-Game.print init_grid
 loop do
   system 'clear'
   Game.print game.tick
