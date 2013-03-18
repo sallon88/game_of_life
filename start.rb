@@ -24,8 +24,12 @@ init_grid = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
 game = Game.new init_grid
-loop do
-  system 'clear'
-  Game.print game.tick
-  sleep 0.07
+begin
+  loop do
+    system 'clear'
+    Game.print game.tick
+    sleep 0.07
+  end
+rescue Interrupt
+  puts ' abord!'
 end
