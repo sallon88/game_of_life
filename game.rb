@@ -1,4 +1,16 @@
 class Game
+  class << self
+    #print a grid
+    def print(grid)
+      grid.length.times do |y|
+        grid[y].length.times do |x|
+          Kernel.print (grid[y][x] == 1 ? 'x ' : '  ')
+        end
+        Kernel.print "\n"
+      end
+    end
+  end
+
   def initialize(init_grid)
     @init_grid = init_grid
     @next_grid = build_next_grid
@@ -10,7 +22,10 @@ class Game
         set_alive(x,y) if should_live?(x,y)
       end
     end
-    @next_grid
+
+    #for next tick
+    initialize(@next_grid)
+    @init_grid
   end
 
   private 
